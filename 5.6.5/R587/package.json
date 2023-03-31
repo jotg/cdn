@@ -1,0 +1,36 @@
+{
+  "name": "cdn",
+  "description": "Timegrip CDN",
+  "version": "0.0.1",
+  "private": true,
+  "author": "Timegrip AS",
+  "type": "module",
+  "dependencies": {
+    "minimist": "~1.2.8",
+    "php-parser": "~3.1.4",
+    "shelljs": "~0.8.5"
+  },
+  "scripts": {
+    "start": "node cdn-deploy.js",
+    "help": "node cdn-deploy.js help"
+  },
+  "engines": {
+    "node": ">=18",
+    "npm": ">=9"
+  },
+  "cdn": {
+    "directory": {
+      "fallback": "\\\\EIR\\E$\\Microservices\\root",
+      "deploy": "../deploy"
+    },
+    "git": {
+      "base": "https://github.com/jotg",
+      "repo": "cdn"
+    },
+    "azure": {
+      "storage": {
+        "token": "sp=racwl&st=2023-03-23T14:31:43Z&se=2023-04-23T21:31:43Z&spr=https&sv=2021-12-02&sr=c&sig=vKttDfuR%2F44H1r3Ai1hTKqf%2Bmbu9COlKO1DqQfFzZtY%3D"
+      }
+    }
+  }
+}
